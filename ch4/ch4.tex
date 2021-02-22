@@ -20,15 +20,11 @@
 
 
 \pagestyle{myheadings}
-
 \setlength{\parindent}{0in}
-
 \pagestyle{empty}
 
 \begin{document}
-
 \thispagestyle{empty}
-
 {\scshape VETM 690} \hfill {\scshape \Large  Ch. 4 Inbreeding and Coancestry} \hfill {\scshape Feb 20 2021}
  
 \medskip
@@ -38,6 +34,8 @@
 \bigskip
 
 \bigskip
+
+{\large \bf Summary}
 
 {\large \bf Problems}   
 \begin{enumerate}
@@ -70,9 +68,7 @@ F_{10} = 1 - (1 - \frac{1}{2N})^{10} = 1 - (1 - \frac{1}{40})^{10} = 0.224 \\
 $F_{IS}$ is inbreeding due to non-random mating in a sub-population. $F_{ST}$ is inbreeding due to population subdivision.
 
 \item In problem 4.1 it was assumed that the locus considered is neutral. Suppose that one of the alleles of the locus is deleterious with a purging coefficient of d = 0.2. What would then be the expected values of the heterozygosity, the variance of allele frequencies and the inbreeding for this locus in generation $t = 20$?
-
 See recursivePurgedInbreedingCoefficient.r for an mplementation of equation 4.26 which computes $g_{20}$, the purged inbreeding coefficient at generation 20, as 0.147. 
-
 \begin{gather*}
 H_0 = 0.42 \\
 H_t = 2p_0q_0(1-F_t) = 2(0.3)(0.7)(1 - 0.147) = 0.358\\
@@ -84,13 +80,22 @@ H_t = 2p_0q_0(1-F_t) = 2(0.3)(0.7)(1 - 0.147) = 0.358\\
 F_{ST}  = \frac{1}{4N((m)\frac{n}{n-1}^2 + (u)\frac{n}{n-1}) + 1} = \frac{1}{4N((0.01)\frac{10}{9}^2 + (10^{-6})\frac{10}{9}) + 1} = 0.168 \\
 F_{ST} =  \frac{1}{4N((m)\frac{n}{n-1}^2) + 1} = \frac{1}{4N((0.01)\frac{10}{9}^2)+ 1} = 0.168 \\
 D \approx \frac{1}{1 + \frac{m}{u(n-1)}} = \frac{1}{1 + \frac{0.01}{10^{-6}(9)}} = 0.001\\
-F_{ST}  = \frac{1}{4N((m)\frac{n}{n-1}^2 + (u)\frac{n}{n-1}) + 1} = \frac{1}{4N((0.01)\frac{10}{9}^2 + (10^{-3})\frac{10}{9}) + 1} = 0.157 \\
-F_{ST} =  \frac{1}{4N((m)\frac{n}{n-1}^2) + 1} = \frac{1}{4N((0.01)\frac{10}{9}^2)+ 1} = 0.168 \\
+F_{ST}  = \frac{1}{4N((m)\frac{n}{n-1}^2 + (u)\frac{n}{n-1}) + 1} = \frac{1}{4*100((0.01)\frac{10}{9}^2 + (10^{-3})\frac{10}{9}) + 1} = 0.157 \\
+F_{ST} =  \frac{1}{4N((m)\frac{n}{n-1}^2) + 1} = \frac{1}{4*100((0.01)\frac{10}{9}^2)+ 1} = 0.168 \\
 D \approx \frac{1}{1 + \frac{m}{u(n-1)}} = \frac{1}{1 + \frac{0.01}{10^{-6}(9)}} = 0.001\\
 \end{gather*}
 
-
 \item In an experimental fish population maintained in 10 tanks, diversity for a group of molecular markers (SNPs) is analysed obtaining an average expected heterozygosity in each tank of $H_S = 0.21$ and a total heterozygosity for the whole set of tanks $H_T = 0.32$. (a) Calculate the differentiation index $F_{ST}$, the corrected index relative to its maximum value and the $D$ index. (b) The analysis is repeated with microsatellite markers obtaining values of $H_S = 0.83$ and $H_T = 0.89$. Are the results of both types of markers consistent with each other?
+
+\begin{gather*}
+F_{ST} = \frac{H_T - H_S}{H_S}= \frac{0.32 - 0.21}{0.32} = 0.344 \\
+F'_{ST} = \frac{F_{ST}}{\frac{(n-1)(1-H_S)}{n-1+H_S}} = \frac{0.344}{\frac{9(1 - 0.21)}{9 + 0.21}} = 0.445\\
+D =  \frac{H_T-H_S}{1-H_S}\frac{n}{n-1} = \frac{0.32 - 0.21}{1 - 0.21}\frac{10}{9} = 0.155\\
+\\
+F_{ST} = \frac{H_T - H_S}{H_S}= \frac{0.89 - 0.83}{0.89} = 0.0.067 \\
+F'_{ST} = \frac{F_{ST}}{\frac{(n-1)(1-H_S)}{n-1+H_S}} = \frac{0.067}{\frac{9(1 - 0.83)}{9 + 0.83}} = 0.433\\
+D =  \frac{H_T-H_S}{1-H_S}\frac{n}{n-1} = \frac{0.89-0.83}{1 - 0.83}\frac{10}{9} = 0.392
+\end{gather*}
 
 \end{enumerate}
 
@@ -111,9 +116,41 @@ D \approx \frac{1}{1 + \frac{m}{u(n-1)}} = \frac{1}{1 + \frac{0.01}{10^{-6}(9)}}
 \end{itemize}
 
 {\large Estimated inbreeding using genomics versus pedigrees}
+\begin{itemize}
+\item https://pubmed.ncbi.nlm.nih.gov/26059970/
+\item Tested whether the realized proportion of the genome that is IBD is predicted better by pedigree inbreeding coefficients or genomic (marker-based) measures of inbreeding
+\item Inbred individuals have lower heterozygosity due to fractions of loci that are identical by descent, which arises if two gene copies both originate from one copy in a common ancestor of the parents
+\item measures of inbreeding try to predict the proportion of the genome that is IBD 
+\item $F_P$ is the "best" measure for inbreeding and uses known common ancestors of parents, also assumes that pedigree founders are unrelated and non-inbred
+\item Problems with $F_P$: measures of IBD can vary among individuals within a pedigree, the standard deviation of IBD is high in species with few chromosomes/short genetic maps, and $F_P$ cannot account for inbreeding caused by ancestors not included in a pedigree
+\item Using molecular data, IBD can be estimated as the increase in individual homozygosity relative to HW expected homozygosity ($F_H$) , or use mapped genetic markers to identify IBD tracts or ROH ($F_{ROH}$ estimates the IBD as the proportion of genome within ROH
+\item Tested various measures of inbreeding using simulated data, along with the assumption that population founders were unrelated and non-inbred
+\item Re-ran all tests to assess whether results are different if inbreeding is due to recent ancestors
+\item LD pruning: reduce LD because $F_{ROH}$ is estimated after pruning to avoid detecting fixed ROH from ancient population processes
+\item Used 3 estimators of IBD (sliding window approach in PLINK, excess number of ohmozygotes in an individual relative to mean number expected under random mating, and a ML estimator using HMM
+\item Comparison of difference inbreeding measures: assessed the proportion of variance in IBD explained by each measure from linear regression on IBD
+\item Pedigree-based estimators had low precision, $F_{ROH}$ and $F_H$ had good precision with large number of SNPs, and molecular-based estimators were always more precise than pedigree-based when large number of SNPs were used 
+\item Pedigree-based was more biased (underestimated IBD), but so were marker-based estimators when using few SNPs, $F_H$ overestimated
+\item correlation values for pedigree estimates were lower using shorter genetic maps, molecular methods had good precision in partially isolated populations with shorter genome maps 
+\item pedigree-based methods were also imprecise when inbreeding was only from recent ancestors
+\item marker based methods performed similarly when inbreeding was from recent ancestors or not
+\item $F_P$ was downardly biased and this can be explained by inbreeding in the founder population which is unaccounted for. Moving the base population back in time can reduce this bias.
+\item All marker-based estimators were precise when a large number of SNPs were used. 
+\item the number of SNPs necessary for estimating inbreeding depends on whether we are interested in inbreeding due to distant ancestors, marker heterozygosity, the proportion of missing genotypes, and the variance in IBD
+\item Detecting IBD tracts depends non SNP density 
+\item Marker-based is most advantageous when genetic maps are short
+\item Limitations of the study: assumed no crossover interference, assume pedigrees and genotypes were error free, and did not simulate inbreeding depression  
+\end{itemize}
 
 {\large Pedigree free genomic kinship estimates for heritability in the wild}
+\begin{itemize}
+\item https://pubmed.ncbi.nlm.nih.gov/24917482/
+\item 
+\end{itemize}
 
  {\large Genomics for quantitative genetics in the wild}
+\begin{itemize}
+\item https://www.sciencedirect.com/science/article/abs/pii/S0169534717302343
+\end{itemize}
 
 \end{document}
