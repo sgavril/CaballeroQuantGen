@@ -90,12 +90,30 @@
 \item the ML estimate for $\mu$ is $\bar{y}$
 \item the ML estimate for $\sigma^2 = V + (\bar{y} - \mu)^2$
 \item ML estimates for variance do not account for loss in degrees of freedom when estimating fixed effects, so a correct is applied to produce restricted ML (REML)
-
+\item REML estimation and the animal model: $y = Xb + Za + e$, where $b$ is the vector of fixed effects, $X$ is the incidence matrix, $a$ is the vector of additive effects of individuals, $Z$ is the incidence matrix, and $e$ is the vector of residual errors
+\item The additive genetic covariance between any two individuals is $r\sigma^2_A$, where $r$ is the numerator of the coefficient of additive relationships between individuals (twice their coancestry, $2f$)
+\item The variance-covariance matrix $G$ includes all additive covariances between individuals and is given by $A\sigma^2_A$ where $A$ is the matrix with the numerator of the coefficient of additive relationships between individuals
+\item Matrix A is obtained by multiplying the coancestry vales between all individuals by 2 (which was obtained using the tabular method)
+\item Matrix R is the residual variance-covariance matrix which reduces to $I\sigma^2_A$
+\item The matrix of phenotypic variances-covariances becomes $P = ZGZ' + I\sigma^2_R$, and the vector $y$ in the animal model contains both vectors of means (Xb) and the matrix of phenotypic variances-covariances P
+\item The ML estimator can be derived as $lnL(b, P | y, Xb) = c - 1/2log|P| - 1/2(y-Xb)'P^{-1}(y-Xb)$, where $|P|$ denotes the determinant 
+\item The basic animal model can be extended to other random effects (environmental, indirect genetic effects such as social interactions), maternal effects. This would entail adding new terms of random effects to the expression.
+\item Animal model can also be extended to dominance effects , and also to detect G by E interactions 
+\item Variance estimates are not affected by biases from finite census size, assortative mating, selection or inbreeding because the matrix of additive relationship factors account for these 
+\item Predicting additive values using BLUP
+\begin{itemize}
+\item BLUP allows for estimating the additive values correcting for any type of fixed effects and uses all information 
+\item The BLUP estimate for the prediction of additive values is: $\hat{a} = cov(y',a)P^{-1}(y-Xb) = AZ'\sigma^2_A[ZGZ' + R]^{-1}(y-Xb)$
+\item Estimating fixed effects by using generalized least squares is $\hat{b} = (X'P^{-1}X)^{-1}X'P^{-1}y$
+\item Using molecular coancestries (with genetic markers) can estimate genetic variance components  with the expression $\hat{h}^2 = \frac{cov(Z,f_m)}{2var(f_M)}$
+\item Can add term $Zq$ to the animal model expression where $q$ is a vector of additive effeects of individuals associated with the marker, then use likelihood ratio tests to determine if the chosen marker is significant
+\item comparing estimates of heritability using genealogical and molecular data: reflect with greater reality the degree of coancestry but are subject to lower precision
+\end{itemize}
 \end{itemize}
 
 {\large \bf Problems}   
 \begin{enumerate}
-\item The aim i sto carry out an experiment to estimate the heritability of a trait using pairs of parents and offspring. It is expected that the estimate of heritability will be around 0.6. It is intended to evaluate only one offspring per couple and a single parent or both. How many pairs of data would have to be evaluated in each case to obtain an estimate of heritability with a standard error equal to or less than 0.05?
+\item The aim is to carry out an experiment to estimate the heritability of a trait using pairs of parents and offspring. It is expected that the estimate of heritability will be around 0.6. It is intended to evaluate only one offspring per couple and a single parent or both. How many pairs of data would have to be evaluated in each case to obtain an estimate of heritability with a standard error equal to or less than 0.05?
 \begin{gather*}
 N_e = \frac{4N_fN_m}{N_m + N_f} = \frac{4(4)16}{20} = 12.8\\
 \end{gather*}
@@ -105,29 +123,21 @@ N_e = \frac{4N_fN_m}{N_m + N_f} = \frac{4(4)16}{20} = 12.8\\
 1 - F_{IT} = (1-F_{IS})(1-F_{ST}) \\
 \end{gather*}
 
-\item In a population that is maintained with 16 males and 32 females in panmixia, what is the effective size corresponding to autosomal, X-linked and Y-linked loci?
+\item In an analysis of mono (MZ) and dizygotic (DZ) twins, the following components of the variance between pairs (B), within paris (W) and total (T) have been obtained: $\sigma^2_B = 0.41, \sigma^2_W = 0.18, \sigma^2_T = 0.59$ for monozygotic twins and $\sigma^2_B = 0.25, \sigma^2_W = 0.32, \sigma^2_T = 0.57$ for dizygotic twins. What estimates of genetic components can these data provide?
 
 \begin{gather*}
 N_{autosomal} = \frac{4N_mN_f}{N_m + N_f} = \frac{4(16)32}{16 + 32} =  42.67\\
-N_x = \frac{9N_mN_f}{2N_m + N_f} = \frac{9(16)32}{4(16) + 2(32)} = 36\\
-N_y = N/2 = 8/2 = 4
 \end{gather*}
 
-\item Consider lines of size $N = 20$ of problem 5.2 which are reproduced with 50 percent autogamy, and calculate their effective size taking into account the effect of natural selection acting on deleterious mutations. Assume that the haploid genome rate of deleterious mutation is $U = 0.2$, that the effect of mutations is $s = 0.1$, constant for all of them, and that there is no linkage.\\
-Variance of selective advantage: $C^2$. Cumulative term of selection: Q. Assume that selection does not reduce genetic variance so that $G = 1$. Lastly, correlation between selective advantages of parents (r) can be approximated by $\beta$ for selfing, which we know is 0.5.
+\item The weights $P_i$ of for mice are available: A (16.6g) B (22.1g) C(18g) D(12.4g). Using genetic markers, we have molecular coancestries $f_{M, ij}$ with coancestry table provided in the question. Estimate the heritability of weight.
 \begin{gather*}
 C^2 = Us = 0.2(0.1) = 0.02\\
-Q = \frac{2}{2 - G(1+r)} = \frac{2}{2 - (1+0.5) = 4}\\
-N_e = \frac{4N}{(2(1-\alpha) + (S_k^2 + 4Q^2C^2)(1+\alpha)} = \frac{4(20)}{(2(1-0.333) + (3 + 4(16)0.02)(1+0.333)} = 11.36 
 \end{gather*}
 
-\item Suppose a population is maintained with $N=16$ individuals that mate in pairs and the following numbers of descendants per pair are obtained: 1,3,4,0,,2,0,5, 1. (a) What would be the effect size of the population? (b) If the contribution of the pairs were equaized so that each couple contributed a male and female to the offspring, what would then be the effective size? What would it be if the contribution of four of the pairs were of two males and that of the other four pairs of two females?
+\item The aim is to estimate the heritability of a human trait using a design of full-sib pairs, estimating the genomic relationships with molecular markers. How many pairs should be evaluated to obtain a standard error of the heritability estimate equal to or less than 0.1?
 
 \begin{gather*}
 S_K^2 = Var(1,3,4,0,2,0,5,1) = 3.429\\
-N_e = \frac{4N}{2 + S_K^2} = \frac{4(16)}{2 + 3.429} = 11.79\\
-(b) S_K^2 = 0\\
-N_e = \frac{63}{2} = 32
 \end{gather*}
 
 \end{enumerate}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.14)  28 FEB 2021 22:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.14)  1 MAR 2021 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -448,33 +448,20 @@ Overfull \hbox (3.57365pt too wide) in paragraph at lines 88--89
 h com-plex struc-
  []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 135--137
+
+Overfull \hbox (1.29135pt too wide) in paragraph at lines 107--108
+[]\OT1/cmr/m/n/12 Estimating fixed ef-fects by us-ing gen-er-al-ized least squa
+res is $[] = (\OML/cmm/m/it/12 X[]P[]X\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 X[]P[
+]y$ 
+ []
+
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--139
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--141
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--143
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--145
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 145--147
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
 
  []
 
@@ -483,13 +470,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--153
 
  []
 
-[4] (./ch6.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+[5] (./ch6.aux)
 Package rerunfilecheck Info: File `ch6.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 7347 strings out of 479383
- 102995 string characters out of 5875830
+ 7348 strings out of 479383
+ 103001 string characters out of 5875830
  417526 words of memory out of 5000000
  24154 multiletter control sequences out of 15000+600000
  412603 words of font info for 64 fonts, out of 8000000 for 9000
@@ -504,10 +515,10 @@ r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on ch6.pdf (4 pages, 139033 bytes).
+Output written on ch6.pdf (5 pages, 145331 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
- 20 named destinations out of 1000 (max. 500000)
+ 92 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
+ 21 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
