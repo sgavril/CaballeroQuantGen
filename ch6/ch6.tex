@@ -1,0 +1,163 @@
+\documentclass[12pt]{amsart}
+
+\addtolength{\hoffset}{-2.25cm}
+\addtolength{\textwidth}{4.5cm}
+\addtolength{\voffset}{-2.5cm}
+\addtolength{\textheight}{5cm}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{15pt}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[colorlinks = true, linkcolor = black, citecolor = black, final]{hyperref}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{ marvosym }
+\usepackage{wasysym}
+\newcommand{\ds}{\displaystyle}
+
+
+\pagestyle{myheadings}
+
+\setlength{\parindent}{0in}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape VETM 690} \hfill {\scshape \Large  Ch. 6: Genetic values and variances} \hfill {\scshape Feb 28 2021}
+\medskip
+\hrule
+\bigskip
+
+{\large \bf Estimating heritability with simple experimental design:}
+\begin{itemize}
+\item  We have seen that additive values of individuals are primarily responsible for the resemblance between relatives and can be quantified by heritability $h^2 = V_A/V_P$
+\item Simple design: pairs of parents and offspring (estimates obtained by means of coefficient of regressing offspring values onto P) 
+\item Or groups of full sibs or half sibs (estimates obtained by intraclass correlation coefficient) 
+\item ICC: how strongly units in the same group relate to each other, commonly used in QG to quantify the degree to which individuals with fixed relatedness resemble each other 
+\item Estimation based on degree of resemblance between parents and offspring
+\begin{itemize}
+\item Mean of the trait of an offspring is by definition half of additive value $A$, so $cov(\bar{O},P) = \frac{V_A}{2}$
+\item From above it can be derived that the regression of the mean of phenotypic values of offspring on their parents is an estimate of half the heritability of the evaluated trait
+\item with both sexes, we take $\bar{P}$ as the average phenotypic value between parents, and the regression of mean of offspring on parental average provides a measure of heritability
+\item Maternal effects: a cause of resemblance between parents and offspring that is influenced by maternal environment including body weight and milk production, and especially for behavioural  traits in humans
+\item Variance for heritability is minimized when only one offspring per family is evaluated and is approximated by $\sigma^2_b \approx \frac{k}{n}$ where $k$ is the number of parents and $n$ is the number of data pairs
+\item Standard error of the estimate can be reduced by taking parents with phenotypic values at the extremes of a distribution because this has a stronger effect on the regression 
+\end{itemize}
+\item Estimation based on resemblance between siblings 
+\begin{itemize}
+\item covariance in a trait between half sibs is a quarter, and the intraclass correlation is $t_{HS} = \frac{V_A/4}{V_P} = \frac{h^2}{4}$
+\item Variance is increased when half or full sibs grow in the same environment 
+\item For full sibs, the intraclass correlation is $t_{HS} = \frac{h^2}{4} + 1/4d^2 + c^2$, where $d^2$ represents the proportion of phenotypic variance due to dominance variance, and $c^2$ is the proportion of variance due to the common environment 
+\item common environmental variance can imply an increase or decrease in resemblance between siblings 
+\item The error for heritability estimates by groups of full sibs can be approximated by $\sigma^2 \approx 2(1 + jt)^2 / nj^2$
+\item The standard error of the estimate of heritability is inversely proportional to the square root of the number of families analyzed 
+\end{itemize}
+\item Assortative mating: 
+\begin{itemize}
+\item Regression of average value of parents on their progeny is not affected by assortative mating 
+\end{itemize}
+\item Estimating based on degree of similarity between twins
+\begin{itemize}
+\item Monozygotic twins have variance between pairs that includes genetic variance and common environmental variance
+\item Within a pair, only environmental variance exists
+\item In humans, things like cell activity, reproduction and social interactions have low heritability and high common environments, skeletal, dermatological and pthalmological characters have high average heritabilities 
+\end{itemize}
+\item Coefficients of additive and dominance relationships
+\begin{itemize}
+\item The correlation of additive values between two individuals $r = 2f_{xy}\sqrt{(1+F_X)(1+F_Y)}$
+\item The correlation of dominance values between two individuals with parents A,B and C,D is $u = f_{AC}f_{BD} + f_{AD}f_{BC}$
+\item For monozygotic, r = 1, u 1
+\item for full sibs, r = 0.5 and u = 0.25
+\item for half sibs r = 0.25 and u = 0
+\item for parents and offspring, r = 0.5 and u = 0
+\end{itemize}
+\end{itemize}
+{\large \bf Estimation of genetic correlation:}
+\begin{itemize}
+\item correlations can be estimated for traits X and Y for phenotypic, additive genetic and environmental correlations
+\item All 3 correlations can be incorporated into the expression $r_p = r_Ah_Xh_Y + r_E\sqrt{(1-h^2_x)(1-h^2_y)}$
+\item Estimate of genetic correlation $r_A = \frac{cov_A(X,Y)}{\sqrt{V_{AX}V_{AY}}}$
+\item Experimental designs that minimize the sampling variance of the heritability will minimize error of correlation estimates 
+\end{itemize}
+{\large \bf Estimating variance and predicting additive values with complex structure}
+\begin{itemize}
+\item the ML estimate for $\mu$ is $\bar{y}$
+\item the ML estimate for $\sigma^2 = V + (\bar{y} - \mu)^2$
+\item ML estimates for variance do not account for loss in degrees of freedom when estimating fixed effects, so a correct is applied to produce restricted ML (REML)
+
+\end{itemize}
+
+{\large \bf Problems}   
+\begin{enumerate}
+\item The aim i sto carry out an experiment to estimate the heritability of a trait using pairs of parents and offspring. It is expected that the estimate of heritability will be around 0.6. It is intended to evaluate only one offspring per couple and a single parent or both. How many pairs of data would have to be evaluated in each case to obtain an estimate of heritability with a standard error equal to or less than 0.05?
+\begin{gather*}
+N_e = \frac{4N_fN_m}{N_m + N_f} = \frac{4(4)16}{20} = 12.8\\
+\end{gather*}
+
+\item An analysis of families has provided a value of the phenotypic correlation between full sibs of $t_{FS} = 0.12$. (a) What is the estimate of heritability tha tcan be obtained with this data? (b) It is later discovered that the parents of the families did not mate randomly but with positive assortative mating for the character under study, having estimated that the phenotypic correlation between the individuals of pairs is $\rho = 0.5$. How is the estimate of heritability modified? (c) If the phenotypic correlation between pairs were maximal, what would be the value of the heritability? 
+\begin{gather*}
+1 - F_{IT} = (1-F_{IS})(1-F_{ST}) \\
+\end{gather*}
+
+\item In a population that is maintained with 16 males and 32 females in panmixia, what is the effective size corresponding to autosomal, X-linked and Y-linked loci?
+
+\begin{gather*}
+N_{autosomal} = \frac{4N_mN_f}{N_m + N_f} = \frac{4(16)32}{16 + 32} =  42.67\\
+N_x = \frac{9N_mN_f}{2N_m + N_f} = \frac{9(16)32}{4(16) + 2(32)} = 36\\
+N_y = N/2 = 8/2 = 4
+\end{gather*}
+
+\item Consider lines of size $N = 20$ of problem 5.2 which are reproduced with 50 percent autogamy, and calculate their effective size taking into account the effect of natural selection acting on deleterious mutations. Assume that the haploid genome rate of deleterious mutation is $U = 0.2$, that the effect of mutations is $s = 0.1$, constant for all of them, and that there is no linkage.\\
+Variance of selective advantage: $C^2$. Cumulative term of selection: Q. Assume that selection does not reduce genetic variance so that $G = 1$. Lastly, correlation between selective advantages of parents (r) can be approximated by $\beta$ for selfing, which we know is 0.5.
+\begin{gather*}
+C^2 = Us = 0.2(0.1) = 0.02\\
+Q = \frac{2}{2 - G(1+r)} = \frac{2}{2 - (1+0.5) = 4}\\
+N_e = \frac{4N}{(2(1-\alpha) + (S_k^2 + 4Q^2C^2)(1+\alpha)} = \frac{4(20)}{(2(1-0.333) + (3 + 4(16)0.02)(1+0.333)} = 11.36 
+\end{gather*}
+
+\item Suppose a population is maintained with $N=16$ individuals that mate in pairs and the following numbers of descendants per pair are obtained: 1,3,4,0,,2,0,5, 1. (a) What would be the effect size of the population? (b) If the contribution of the pairs were equaized so that each couple contributed a male and female to the offspring, what would then be the effective size? What would it be if the contribution of four of the pairs were of two males and that of the other four pairs of two females?
+
+\begin{gather*}
+S_K^2 = Var(1,3,4,0,2,0,5,1) = 3.429\\
+N_e = \frac{4N}{2 + S_K^2} = \frac{4(16)}{2 + 3.429} = 11.79\\
+(b) S_K^2 = 0\\
+N_e = \frac{63}{2} = 32
+\end{gather*}
+
+\end{enumerate}
+
+{\large \bf Self Assessment}
+\begin{enumerate}
+\item The different types of effective size (variance, inbreeding, eigenvalue, coalescence, etc. usually coincide exactly or approximately in their asymptotic value.\\
+True: the text states that except in very specific situations, the predictions of effective population size coincide, or only differ in second order terms.\\
+\item To average different population sizes, the harmonic mean is usually used, because the effective size usually affects the denominator of the expressions in which it is found.\\
+True, the text states that when we want to average (effective) population sizes for predicting their impact on drift or inbreeding, we use the harmonic mean, because small values have the most relevance and are in the denominator in these expressions. \\
+\item In populations with a certain percentage of matings between relatives, the variance of the contributions of parents to progeny decreases with respect to that corresponding to a panmictic population.\\
+False, Hardy-Weinberg disequilibrium implies a decrease of heterozygotes and increase of homozygoytes. The increase of homozygotes corresponds to an increase in the variation between parental contributions by a factor of $1 + \alpha$. This results in a greater variance in allele frequencies, because homozygotes only contribute one allele. \\
+\item The effective size decreases as the generation interval increases in populations with overlapping generations.\\
+False, effective size in overlapping generations is linearly proportional to generational interval $N_e \propto I_g$, so an increase in generational interval would increase $N_e$.\\
+\item The magnitude of the genetic drift that affects the genes of the X chromosome in XX-XY species or the Z chromosome in ZZ-ZW species is 25 percent less than that of autosomal genes.\\
+Assuming an equal number of males and females, then true. $N_e = 3N/4$. The expression of sex-linked genes is given greater weight in the heterogametic sex. This could be false? My answer deals with $N_e$, not drift.\\
+\item The effective size referring to neutral genes is drastically reduced when there is linkage between these and other loci subjected to selection.\\
+True, the cumulative effect of selection produced by mutations on neutral genes linked to genes that are selected can be approximated by $Q_c \approx \frac{1}{s+c}$. As linkage becomes greater, the percent recombination c increases which increases the cumulative effect.\\
+\item The effective size of a subdivided population always increases with the differentiation in allele frequencies between sub-populations.\\
+True, the effective size of a subdivided population $N_e = \frac{Nn}{1-F_{ST}}$. As differentiation increases (approaches 1), $N_e$ approaches infinity. Reasoning: there is little to no genetic drift because if sub-populations remain isolated, different allelic variants could become fixed in the different subpopulations without being lost, resulting in a high variance effective size. This scenario is only true if sub-populations contribute identically to the offspring in each generation. 
+\item With equal contributions from parents to offspring, if mating between relatives is forced, the long-term effective size increases in comparison with the panmictic scenario.\\
+True, the thinking is along the same lines as question 7. 
+\item The demographic methods of estimating the effective size tend to produce underestimates, by not taking into account all possible sources of genetic drift in the population.\\
+False, demographic methods have the advantage of incorporating sources like genetic drift and inbreeding. \\
+\item The larger the effective population size, the larger is the expected linkage disequilibrium between two closely linked loci.\\
+False, linkage and $N_e$ are inversely proportional as shown by: $N_e \approx N exp\frac{-U}{s + (L/2)}$, where L is the linkage in the chromosomal segment. So a larger $N_e$ must arise from lower $L$.
+\end{enumerate}
+
+\medskip
+
+
+
+\end{document}
