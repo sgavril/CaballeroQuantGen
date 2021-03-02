@@ -115,56 +115,87 @@
 \begin{enumerate}
 \item The aim is to carry out an experiment to estimate the heritability of a trait using pairs of parents and offspring. It is expected that the estimate of heritability will be around 0.6. It is intended to evaluate only one offspring per couple and a single parent or both. How many pairs of data would have to be evaluated in each case to obtain an estimate of heritability with a standard error equal to or less than 0.05?
 \begin{gather*}
-N_e = \frac{4N_fN_m}{N_m + N_f} = \frac{4(4)16}{20} = 12.8\\
+SE(h^2) = \frac{2}{\sqrt{n}} \\
+n = (\frac{2}{SE(h^2)})^2 = (\frac{2}{0.05})^2 = 1600\\
+SE(h^2) = \sqrt{\frac{2}{n}}\\
+n = (\frac{\sqrt{2}}{SE(h^2)})^2 = (\frac{\sqrt{2}}{0.05})^2 = 800
 \end{gather*}
 
 \item An analysis of families has provided a value of the phenotypic correlation between full sibs of $t_{FS} = 0.12$. (a) What is the estimate of heritability tha tcan be obtained with this data? (b) It is later discovered that the parents of the families did not mate randomly but with positive assortative mating for the character under study, having estimated that the phenotypic correlation between the individuals of pairs is $\rho = 0.5$. How is the estimate of heritability modified? (c) If the phenotypic correlation between pairs were maximal, what would be the value of the heritability? 
+
 \begin{gather*}
-1 - F_{IT} = (1-F_{IS})(1-F_{ST}) \\
+t_{FS} = 0.5h^2 + 0.25d^2 = c^2 \\
+t_{FS} = 0.5h^2 \\
+2t_{FS} = h^2 = 2(0.12) = 0.24\\
+t_{FS} = 0.5h^2(1 + \rho h^2) \\
+t_{FS} = 0.5h^2 + 0.25(h^2)^2 \\
+0 = 0.5h^2 + 0.25(h^2)^2 \ - t_{FS}\\
+h^2 = x\\
+0 = 0.5x + 0.25x^2 - t_{FS} = 0.5x + 0.25x^2 - 0.12 \\
+x = \frac{1}{5}(\sqrt{37}-5) \approx 0.217\\
+\rho = 1\\
+0 = 0.5x + 0.25x^2 - t_{FS} = 0.5x + 0.5x^2 - 0.12 \\
+x = \frac{1}{5}
 \end{gather*}
 
 \item In an analysis of mono (MZ) and dizygotic (DZ) twins, the following components of the variance between pairs (B), within paris (W) and total (T) have been obtained: $\sigma^2_B = 0.41, \sigma^2_W = 0.18, \sigma^2_T = 0.59$ for monozygotic twins and $\sigma^2_B = 0.25, \sigma^2_W = 0.32, \sigma^2_T = 0.57$ for dizygotic twins. What estimates of genetic components can these data provide?
 
 \begin{gather*}
-N_{autosomal} = \frac{4N_mN_f}{N_m + N_f} = \frac{4(16)32}{16 + 32} =  42.67\\
+t_{MZ} = \frac{\sigma^2_B}{\sigma^2_T} = \frac{0.41}{0.59} = 0.695\\
+t_{DZ} = \frac{\sigma^2_B}{\sigma^2_T} = \frac{0.25}{0.57} = 0.439\\
+2t_{DZ} - t_{MZ} = 0.182 = c^2 - 0.5d^2 \approx c^2\\
+2(t_{MZ} - t_{DZ}) = 0.513 = h^2 + (3/2)d^2 \approx H^2
 \end{gather*}
 
-\item The weights $P_i$ of for mice are available: A (16.6g) B (22.1g) C(18g) D(12.4g). Using genetic markers, we have molecular coancestries $f_{M, ij}$ with coancestry table provided in the question. Estimate the heritability of weight.
-\begin{gather*}
-C^2 = Us = 0.2(0.1) = 0.02\\
-\end{gather*}
-
+\item The weights $P_i$ of for mice are available: A (16.6g) B (22.1g) C(18g) D(12.4g). Using genetic markers, we have molecular coancestries $f_{M, ij}$ with coancestry table provided in the question. Estimate the heritability of weight.\\
+\\
+See the associated R file for this chapter for the answer to this question.
+\\
 \item The aim is to estimate the heritability of a human trait using a design of full-sib pairs, estimating the genomic relationships with molecular markers. How many pairs should be evaluated to obtain a standard error of the heritability estimate equal to or less than 0.1?
 
 \begin{gather*}
-S_K^2 = Var(1,3,4,0,2,0,5,1) = 3.429\\
+SE[h^2] = \sqrt{\frac{2}{n*var(r_M)}}\\
+L = 35\\
+var(r_M) = 1/16L - \frac{1}{3L^2} = 0.0015\\
+n = \frac{2}{(SE[h^2])^2*var(r_M)} = \frac{2}{0.1^2*0.0015} = 133,333
 \end{gather*}
 
 \end{enumerate}
 
 {\large \bf Self Assessment}
 \begin{enumerate}
-\item The different types of effective size (variance, inbreeding, eigenvalue, coalescence, etc. usually coincide exactly or approximately in their asymptotic value.\\
-True: the text states that except in very specific situations, the predictions of effective population size coincide, or only differ in second order terms.\\
-\item To average different population sizes, the harmonic mean is usually used, because the effective size usually affects the denominator of the expressions in which it is found.\\
-True, the text states that when we want to average (effective) population sizes for predicting their impact on drift or inbreeding, we use the harmonic mean, because small values have the most relevance and are in the denominator in these expressions. \\
-\item In populations with a certain percentage of matings between relatives, the variance of the contributions of parents to progeny decreases with respect to that corresponding to a panmictic population.\\
-False, Hardy-Weinberg disequilibrium implies a decrease of heterozygotes and increase of homozygoytes. The increase of homozygotes corresponds to an increase in the variation between parental contributions by a factor of $1 + \alpha$. This results in a greater variance in allele frequencies, because homozygotes only contribute one allele. \\
-\item The effective size decreases as the generation interval increases in populations with overlapping generations.\\
-False, effective size in overlapping generations is linearly proportional to generational interval $N_e \propto I_g$, so an increase in generational interval would increase $N_e$.\\
-\item The magnitude of the genetic drift that affects the genes of the X chromosome in XX-XY species or the Z chromosome in ZZ-ZW species is 25 percent less than that of autosomal genes.\\
-Assuming an equal number of males and females, then true. $N_e = 3N/4$. The expression of sex-linked genes is given greater weight in the heterogametic sex. This could be false? My answer deals with $N_e$, not drift.\\
-\item The effective size referring to neutral genes is drastically reduced when there is linkage between these and other loci subjected to selection.\\
-True, the cumulative effect of selection produced by mutations on neutral genes linked to genes that are selected can be approximated by $Q_c \approx \frac{1}{s+c}$. As linkage becomes greater, the percent recombination c increases which increases the cumulative effect.\\
-\item The effective size of a subdivided population always increases with the differentiation in allele frequencies between sub-populations.\\
-True, the effective size of a subdivided population $N_e = \frac{Nn}{1-F_{ST}}$. As differentiation increases (approaches 1), $N_e$ approaches infinity. Reasoning: there is little to no genetic drift because if sub-populations remain isolated, different allelic variants could become fixed in the different subpopulations without being lost, resulting in a high variance effective size. This scenario is only true if sub-populations contribute identically to the offspring in each generation. 
-\item With equal contributions from parents to offspring, if mating between relatives is forced, the long-term effective size increases in comparison with the panmictic scenario.\\
-True, the thinking is along the same lines as question 7. 
-\item The demographic methods of estimating the effective size tend to produce underestimates, by not taking into account all possible sources of genetic drift in the population.\\
-False, demographic methods have the advantage of incorporating sources like genetic drift and inbreeding. \\
-\item The larger the effective population size, the larger is the expected linkage disequilibrium between two closely linked loci.\\
-False, linkage and $N_e$ are inversely proportional as shown by: $N_e \approx N exp\frac{-U}{s + (L/2)}$, where L is the linkage in the chromosomal segment. So a larger $N_e$ must arise from lower $L$.
+\item The estimate of heritability obtained from the regression of offspring values on that of their parents will necessarily be biased if the latter are not a random sample of the population.\\
+False, if the group of parents were selected, the regerssion estimates would not be affected if the bias would occur to the same extent in the numerator and the denominator of the equation $b_{OP} = \frac{cov(O,P)}{\sigma^2_P}$\\
+
+\item The variance of the means of full-sib families is equal to the covariance of the values of the members of the families.\\
+
+\item The standard errors of heritability estimates obtained from full-sib families are always lower, the lower the value of the heritability.
+False, the standard error of heritability estimates is the same for full or half sibs and is approximated by $h^2\sqrt{\frac{2}{n}}$, and is only inversely proportional to the square root of  the number of families analyzed.
+
+\item For a given total number of evaluated individuals, the estimates of heritability by the regression have less error if only one offspring per family is evaluated.\\
+True, it is stated that of the total number of offspring is fixed, then $\sigma^2_b$ is minimal if only one offspring per family is evaluated, which then is approximated by $k/n$ where $k$ i sthe number of parents and $n$ is the number of data pairs. \\
+
+\item The coefficient of dominance relationship between two cousins is 1/8.\\
+False, it should be 0 because this coefficient only exists when offspring X and Y share both parents. Cousins only share 1 parent.\\ 
+
+\item The phenotypic correlation is the sum of the genetic and environmental correlations.\\
+False, the phenotypic correlation is the sum of the covariance of genetic correlation and environmental correlation all divded by the product of standard errors of each correlation.\\
+
+\item The estimates of variance obtained by ML are biased because they do not take into account the degrees of freedom lost when the fixed effects are estimated.\\
+True, this is the reason why REML is made.\\	
+
+\item The prediction of additive values by BLUP is not biased by the fact that there is selection in the evaluated population.\\
+True, in BLUP the variance of the additive value of an individual is equal to the additive variance of the base population modulated by inbreeding coefficient, so it accounts for selection, non-random mating or changes in population census size.\\
+
+\item Given that the estimates of heritability obtained by twin studies include dominance and epistatic components of variance, this may contribute to the fact that estimates provided by this method are higher than those obtained by means of molecular markers.\\
+True, this could be a reason why. The reason in the text was that the loci that control a trait do not have a large enough effect, or LD between causal and SNPs is not strong enough (due to being found at low frequencies in the population).\\
+
+\item To obtain an estimate of heritability with a standard error of approximately 0.05 using molecular markers in pairs of full sibs in humans, of the order of 500,000 pairs would be needed. \\
+True, use the equation on page 145 to get an answer of 490k.
+
+
 \end{enumerate}
+
 
 \medskip
 
