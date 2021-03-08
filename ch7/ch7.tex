@@ -1,0 +1,88 @@
+\documentclass[12pt]{amsart}
+
+\addtolength{\hoffset}{-2.25cm}
+\addtolength{\textwidth}{4.5cm}
+\addtolength{\voffset}{-2.5cm}
+\addtolength{\textheight}{5cm}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{15pt}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[colorlinks = true, linkcolor = black, citecolor = black, final]{hyperref}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{ marvosym }
+\usepackage{wasysym}
+\newcommand{\ds}{\displaystyle}
+
+
+\pagestyle{myheadings}
+
+\setlength{\parindent}{0in}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape VETM 690} \hfill {\scshape \Large  Ch. 7: Mutation} \hfill {\scshape Mar 7 2021}
+\medskip
+\hrule
+\bigskip
+
+{\large \bf Estimation of Mutation in Quantitative Traits:}
+\begin{itemize}
+\item Mutation: the source of population genetic variation on which natural or aritifical selection acts (to produce genetic changes leading to adaptive evolution)
+\item Number of rounds of replicaiton from zygote to the formation of gametes varies between species and is why rates of mutations vary between species
+\item Men and women: the number of rounds of replication in ova stay at 22 while it continues to grow for spermatozoa in men
+\item However, chromosomal mutations increase in women because of cytoplasmic deterioration in oocytes over time
+\item Given the difficulty of identifying genotypes, it is only possible to obtain average estimates of the effect of mutations and their degree of dominance
+\item Mutational variance $V_M$ is the increase in additive genetic variance per generation due to mutation
+\item And thus mutational heritability is the ratio of $V_M/V_E$ 
+\item Probability of fixation of a mutation:
+\begin{itemize}
+\item In finite populations, genetic drift may cause beneficial alleles to be lost and deleterious alleles to be fixed 
+\item If the mutational selection coefficient is small ($N_es/N < 1$)and $N_es$ is high, then the probability of fixation can be approximated by the selective advantage s, so that most beneficial mutations of small effect are lost in a population of finite size
+\item Neutral mutations have a $P_f$ equal to their initial frequency $1/2N$
+\item Deleterious mutations are destined to be eliminated by selection 
+\item Mutations where absolute value of $N_e$ is substantially smaller than 1, the probability of fixation is the same for that of a neutral mutation. When mutation is advantageous or disadvantageous, the action of drift is more intense than selection and so the fate of the mutation is dependent on chance. This is referred to as quasi-neutral mutations. 
+\item Mutations can be beneficial, neutral or deleterious based on effective population size
+\end{itemize}
+\item Estimating the rate of mutation and mutational effects
+\begin{itemize}
+\item Balanced chromosome technique: cross an individual with another with a balanced chromosome (carrying inversions that inhibit recombinations along with visible markers for identification) 
+\item Cross wt male with If female to obtain copies of chromosome that are used to create multiple independent lines
+\item Mutations accumulate in each line and disappear when deleterious heterozygous effects are sufficiently large
+\item This approach has been applied to C. elegans, where lines 
+\item 
+\end{itemize}
+\end{itemize}
+
+{\large \bf Problems}   
+\begin{enumerate}
+\item The aim is to carry out an experiment to estimate the heritability of a trait using pairs of parents and offspring. It is expected that the estimate of heritability will be around 0.6. It is intended to evaluate only one offspring per couple and a single parent or both. How many pairs of data would have to be evaluated in each case to obtain an estimate of heritability with a standard error equal to or less than 0.05?
+\begin{gather*}
+SE(h^2) = \frac{2}{\sqrt{n}} \\
+n = (\frac{2}{SE(h^2)})^2 = (\frac{2}{0.05})^2 = 1600\\
+SE(h^2) = \sqrt{\frac{2}{n}}\\
+n = (\frac{\sqrt{2}}{SE(h^2)})^2 = (\frac{\sqrt{2}}{0.05})^2 = 800
+\end{gather*}
+\end{enumerate}
+
+{\large \bf Self Assessment}
+\begin{enumerate}
+\item The estimate of heritability obtained from the regression of offspring values on that of their parents will necessarily be biased if the latter are not a random sample of the population.\\
+False, if the group of parents were selected, the regerssion estimates would not be affected if the bias would occur to the same extent in the numerator and the denominator of the equation $b_{OP} = \frac{cov(O,P)}{\sigma^2_P}$\\
+
+\end{enumerate}
+
+
+\medskip
+
+
+
+\end{document}
