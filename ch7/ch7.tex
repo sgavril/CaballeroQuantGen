@@ -57,9 +57,49 @@
 \item Balanced chromosome technique: cross an individual with another with a balanced chromosome (carrying inversions that inhibit recombinations along with visible markers for identification) 
 \item Cross wt male with If female to obtain copies of chromosome that are used to create multiple independent lines
 \item Mutations accumulate in each line and disappear when deleterious heterozygous effects are sufficiently large
-\item This approach has been applied to C. elegans, where lines 
-\item 
+\item This approach has been applied to C. elegans, where lines are started by either self-fertilization or brother sister mating. Mutations accumulate in the genome, and because $N_es << 1$, mutations behave as neutral and have a highly probability of fixation. 
+\item Mutations can be studied if they affect traits that are fitness components, either directly measured (productivity) or it may be in competition with the starting population (founder individuals in C. elegans can be frozen then thawed and compared with individuals from a line)
+\item Accumulating mutations is expected to reduce the mean value of the trait will increasing the variance in that trait, and $\delta V/ \delta M =\bar{s}(1+C^2)$, where U is the haploid genome mutation rate, and C is the coefficient of variation of mutational effects, and s is the average of selective effects of mutations weighted by their mutation rate (Bateman-Mukai method)
+\item Bateman-Mukai enables the estimation of mutational variance (increase in additive genetic variance per generation due to new mutations) and mutational heritability 
+\item Past experiments typically show that most mutations are of small effects, and this is studied using the gamma distribution
+\item U has been estimated for multiceullular eukaryotes (U = 0.08) and viruses (0.93). 
+\item Mean mutational coefficient of variation for fitness traits is $CV_M = 0.026$ 
+\item The Bateman-Mukai method produces estimates with bias of unknown magnitude, because we do not know the distribution of mutational effects 
+\item rate of deleterious mutation can also be estimated from molecular data as $U = U_n\phi$, where $U_n$ is the rate of nucleotide mutation per generation for the genome and phi is the fraction of mutations whose deleterious effect is large enough for selection to determine its elimination, calculated by $\phi = 1 - \pi_g/\pi_s$ where $pi_s$ is the rate substitution rate of mutations that are assumed to be exclusively neutral, and $pi_g$ is the total divergence observed between to twin species 
+\item Detecting mutation rates using molecular methods only discovers mutations of large effect, and those of small effect are not found because of insufficient power
 \end{itemize}
+\item The dominance coefficient
+\begin{itemize}
+\item Mutation accumulation experiments enable the estimates of average coefficient of dominance
+\item First estimate is obtained as the ratio between the value of the trait from a cross between two lines along with the sum of the values of the trait in those lines. Mutations will be found in heterozygosis in the cross
+\item The decline in mean of trait divded by the sum of declines occuring in lines makes up the ratio estimates, which is a measure of the average of dominance coefficients weighted by selection coefficients
+\item Unbiased method for estimating average coefficient of dominance: regress the trait values at cross between lines of heterozygotes onto homozygotes (acting as the sum of trait values in parental lines)
+\item Joint distribution of selection and dominance coefficients: hard to do because the effect of each mutation must be estimated individually 
+\item Large effect mutations in homozygosis are assumed to be recessive
+\item Small-effect mutations are additive 
+\item Fisher hypothesis: a large amount of observed mutations are recessive. It is thought that they were initially additive and that dominance modifiers appeared at other loci that would cause the heterozygoye expression to become similar to wild homozygous 
+\item More common explanation: Wright's physiological theory of dominance. This is based on the idea that the enzymatic activity of heterozygotes is intermediate between homozygotes, but the flux of a metabolic pathway with several enzymes is non linear. But if the mutation has a high activity-reducing effect, then the heterozygote is more similar to the wild homozygote, so the mutation has recessive gene action. This explains why large-effect mutations tend to be recessive
+\end{itemize}
+\item Beneficial mutations and summary of mutational parameters: there is a large variation in mutational parameters between estimates for different traits, species and estimation methods
+\item Somatic mutation rates may be 50x higher than those of the germline
+\item Mutations and environmental factors: can be additive or multiplicative. Can also be synergistic epistasis (greater than combining them) or antagonistic (lower than combining)
+\item Mutations can be conditionally deleterious (such as temperature dependent ones)
+\item Rate of mutation can also be contingent on the genetic background and whether a population is adapted to its environment. For instance, populations with low average fitness see higher rates of beneficial mutation compared to those with normal average fitness (though these are compensatory) 
+\item Mutational parameters for quasi-neutral traits: can be studied using mutation accumulation or, starting with a population lacking genetic variability, artifical selection
+\item If the trait is neutral, then variability is determined exclusively by mutation (increase) or drift (reduction) 
+\item Under the neutral model, the heterozygosity in the mutation-drift equilibrium is a function of $N_e$ and mutation rate per locus
+\item Alternatively, knowing heterozygosity and mutation rate we can estimate effective population size
+\item Additive genetic variance in each generation is the result of the decrease in drift and the increase by new mutation, so equilibrium will be reached 
+\item Though traits are not generally neutral, the following expression can be used if $N_e$ is sufficiently small: $\hat{H} = \frac{4N_eu}{4N_eu + 1}$
+\item The genetic variance between mutation accumulation lines increases at a rate $2 \delta FV_A$
+\item The response to artificial selection due to mutation can be expressed as $R_t = t\hat{V}i/\sqrt{V_P}$ where $i$ is the intensity with which selection is applied and $V_P$ is the phenotypic variance in that trait 
+\item Genes with low effect have effect sizes that are indistinguishable from additivity, but those of large effect are usually recessive and have deleterious pleiotropic effects on fitness 
+\item Implications of deleterious mutations in populations of large sizes: the maximum possible frequency of a deleterious allele at the mutation selection balance is $\hat{q} = u/sh$ 
+\item Small effect of alleles on heterozygosis implies a substantial reduction of equilibrium frequency
+\item Mutation load: decrease in mean fitness of a population compared to that with no segregating deleterious mutations 
+\item The mutation load for a recessive allele is equal to u which implies that in deleterious mutation selection equilibrium, the load only depends on mutation rate regardless of frequency
+\item Joint effect of all loci with presumed deleterious alleles: $L \approx 1 - e^{-2U}$ 
+\item The mean number of mutations eliminated per individual by selection is L(z-y) where L is the load, z is the mean number of del. mutations in individuals and the y is the mean number of mutations carried by survivors 
 \end{itemize}
 
 {\large \bf Problems}   
