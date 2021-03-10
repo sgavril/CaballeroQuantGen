@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.14)  9 MAR 2021 00:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.2.14)  9 MAR 2021 15:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -433,18 +433,32 @@ e
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 118--120
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Overfull \hbox (19.08946pt too wide) in paragraph at lines 135--136
+[]\OT1/cmr/m/n/12 In a mu-ta-tion ac-cu-mu-la-tion ex-per-i-ment where 100 cros
+s-bred brother-sister lines of Drosophila
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-[3] [4] (./ch7.aux)
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+
+ []
+
+[5] (./ch7.aux)
 Package rerunfilecheck Info: File `ch7.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 7334 strings out of 479383
- 102911 string characters out of 5875830
- 415526 words of memory out of 5000000
+ 7339 strings out of 479383
+ 102941 string characters out of 5875830
+ 416526 words of memory out of 5000000
  24154 multiletter control sequences out of 15000+600000
  412603 words of font info for 64 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -458,10 +472,10 @@ r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on ch7.pdf (4 pages, 123729 bytes).
+Output written on ch7.pdf (5 pages, 134045 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
+ 81 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

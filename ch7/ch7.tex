@@ -100,24 +100,65 @@
 \item The mutation load for a recessive allele is equal to u which implies that in deleterious mutation selection equilibrium, the load only depends on mutation rate regardless of frequency
 \item Joint effect of all loci with presumed deleterious alleles: $L \approx 1 - e^{-2U}$ 
 \item The mean number of mutations eliminated per individual by selection is L(z-y) where L is the load, z is the mean number of del. mutations in individuals and the y is the mean number of mutations carried by survivors 
+\item The number of mutations eliminated by selection may be greater than expected due to synergistic epistasis
+\item Non-panmictic populations: equilibrium load decreases as the inbreeding coefficient increases (showing how inbreeding purges deleterious mutations)
+\item Hard selection: fitness directly translates into survival probability, quite unrealistic in terms of the amount of progeny needed for survival
+\item But mutation load refers to population fitness relative to the mutation-free genotype which is often non-existent in natural populations  so the issue with hard selection is reduced/disappears (so long as fitness is considered in relative terms)
+\item Relaxation of selection in human population: possible accumulation of deleterious mutations
+\item Attempted eugenics in 1970s over the world was a failure due to the ineffective elimination of recessive alleles which are masked in heterozygotes 
+\item Consider loads outside of mutation: load due to segregation of heterozygotes in overdominant fitness models, recombination, advantageous allelic recombination, or environemntal heterogeneity or inbreeding
+\item Estimating the average dominance coefficient in mutation-selection equilibrium: using balanced chromosome designs as mentioned before. Homozygous individuals can be obtained for a chromosome, and carriers of chromosomes heterozygous for all loci. Then regress the heterozygotes on homozygotes to estimate the harmonic mean of h weighted by s, given by: $\hat{b} =  \frac{\bar{s}}{\bar{s/h}}$
+\item Estimating mutational parameters in equilibrium from panmictic and inbred populations: if data on means and variances of fitness are available, then we can compute the mutation rate, mean selection coefficient of mutations and dominance coefficients
+\item Mutation and recombination: sex is one of the most important evolutionary aspects for the fixation of beneficial (or deleterious) mutations
+\item Sex carries a two-fold cost assuming an equal number of descendants per individual
+\item Fisher and Muller proposed the evolutionary advantage of recombination: the probability of fixing beneficial mutations at different loci will be independent with recombination
+\item Fixation of beneficial mutations is much faster in populations with sex and mutation, providing a net selective advantage
+\item Muller expanded on deleterious mutations. They can be assembled inthe same genome and thus simultaneously eliminated. In asexual species, mutations accumulate without genome reconstruction, so the minimum number of mutations carried by a given genome grows irreversibly (Muller's ratchet) 
+\item The fixation probability of mutations for any rate of recombination can be obtained from an extension of the formula for predicting $N_e$ under linkage, which is $N_e \approx\frac{-U}{s + (L/2)}$
+\item Hill-Robertson effect: when two alleles of different loci segregate, interference can occur so their probability of fixation is smaller than that if they did not segregate simultaenously (occurs in the absence of LD or through interaction between loci)
+\item In chapter 5 we saw that selecting for a loci increases the magnitude of drift on an unselected, neutral locus due to random associations, reducing $N_e$ ascribed to the neutral locus 
+\item Hill-Robertson is an extension of this when two loci are linked. The association between loci will persist over more generations and will be diluted by recombination, progressivly reducing $N_e$
+\item If two linked genes increased in frequency due to selection $N_e$ decreases but the effect is reduced if recombination is present
+\item Hill-Robertson effect also predicts an increase in the rate of fixating deleterious mutations if no recombination is present 
 \end{itemize}
 
 {\large \bf Problems}   
 \begin{enumerate}
-\item The aim is to carry out an experiment to estimate the heritability of a trait using pairs of parents and offspring. It is expected that the estimate of heritability will be around 0.6. It is intended to evaluate only one offspring per couple and a single parent or both. How many pairs of data would have to be evaluated in each case to obtain an estimate of heritability with a standard error equal to or less than 0.05?
+\item In a population with $N = 100$ individuals and $N_e = 50$, an additive mutation occurs with favourable effect $s = 0.1$ in the homozygote. (a) What is the probability that the mutation will end up being fixed in the population? (b) What would be that probability if the mutation were recessive? (c) If the mutation were deleterious and additive, what would be the mean persistance time and the average number of copies present in the population prior to elimination? 
 \begin{gather*}
-SE(h^2) = \frac{2}{\sqrt{n}} \\
-n = (\frac{2}{SE(h^2)})^2 = (\frac{2}{0.05})^2 = 1600\\
-SE(h^2) = \sqrt{\frac{2}{n}}\\
-n = (\frac{\sqrt{2}}{SE(h^2)})^2 = (\frac{\sqrt{2}}{0.05})^2 = 800
+P_f = \frac{1 - e^{-s(N_e/N}}{1-e^{-2N_es}} = \frac{1 - e^{-0.1(50/100)}}{1-e^{-2(50)(0.1)}} = 0.049 \\
+P_f \approx \frac{\sqrt{2N_es/\pi}}{N} = \frac{\sqrt{2(50)0.1/\pi}}{100} = 0.018\\
+N_es = 50(-0.1) = -5 << -1 ; P_f = 0 ; h = -0.5 \\ 
+t = 2[ln(-1/sh)+1-\gamma = 2[ln(-1/0.1(-0.5) + 1 - 0.5772] = 6.84 \\
+-1/sh = -1/(0.1(-0.5)) = 20
 \end{gather*}
+\item In a mutation accumulation experiment where 100 crossbred brother-sister lines of Drosophila melanogaster were used, the mean viabilities initially and in geneation 100 were 0.8 and 0.35, and the corresponding variances between lines 0.05 and 0.14, respectively. If the distribution of effects of mutations is assumed to be exponential, what are the estimates that can be obtained for the genomic mutation rate, U, the mean effect of mutations $\bar{s}$ and the mutational variance $V_M$? \\
+\begin{gather*}
+\triangle M = (v_0 - v_f)/t = (0.8 - 0.35)/100 = 0.0045\\
+\triangle V = (V_0 - V_f)/t = (0.14-0.05)/100 = 0.0009\\
+C^2/ = 1/\beta = 1/1\\
+\frac{\triangle V }{\triangle M} = \bar{s}(1 + C^2) \\
+\frac{\triangle V }{2\triangle M} = \bar{s} = 0.0009/(2(0.0045)) = 0.1\\
+U = \frac{(1+C^2)\triangle M^2}{\triangle V} = \frac{2(0.0045)^2}{0.0009}=0.045\\
+V_M = \triangle V /2 = 0.0009 /2 = 0.000045    
+\end{gather*}
+\item A strain of Drosophila melanogaster devoid of genetic variation was created by means of crosses using balanced chromosomes. With this strain, lines were founded with effective size $N_e = 20$ and maintained for 100 generations in panmixia. We then evaluate a neutral quantitative trait whose mutational variance has been estimated to be $V_M = 0.0005$. What would be the approximate expected value of the variance between lines and the additive variance of the trait in the last generation?
+\begin{gather*}
+V_{B,t} = 2tV_M = 2(100)(0.0005)=0.1\\
+V_A\approx 2N_eV_M=2(20)0.0005=0.02\\
+V_{A(t)} = V_{A(t-1)}[1-1/2(N_e)] + V_M
+\end{gather*}
+See ch7.r for the code to implement the recursive calculation for $V_{A(t)}$
+\item The rate of mutation of lethal recessives is $2.6*10^{-6}$ per gene and generation and the frequency of such alleles in a population is $1.4*10^{-4}$. Are these estimates compatible with the complete recessivity of lethal alleles? If not, what would be the most likely value of the dominance coefficient h?\\
+The maximum possible frequency of a deleterious allele at the deleterious mutation selection balance can be approximated by $\hat{q}^2 = u/s$. For recessive lethals, $s = 1$ and $u = \sqrt{q} = \sqrt{2.6*10^{-6}} = 0.00161$, so this estimate is not compatable with complete recessivity of lethal alleles because there is about an order of magnitude difference between expected and observed allele frequencies. To calculate the dominance coefficient, we use $h=u/q	= 0.00161/1.4*10^{-4} = 0.0186$
+\item The following data correspond to fitness value of six individuals of a population of large size and the mean fitness of their progeny by self-fertilization. Is it possible to estimate the deleterious genomic mutation rate, U, the mean effect of the mutations $\bar{s}$ and its average dominance coefficient, $\bar{h}$? \\
+Yes, if we assume that the population is at the deleterious mutation-selection equilibrium. See chp7.r for the code to answer this question.
 \end{enumerate}
 
 {\large \bf Self Assessment}
 \begin{enumerate}
 \item The estimate of heritability obtained from the regression of offspring values on that of their parents will necessarily be biased if the latter are not a random sample of the population.\\
 False, if the group of parents were selected, the regerssion estimates would not be affected if the bias would occur to the same extent in the numerator and the denominator of the equation $b_{OP} = \frac{cov(O,P)}{\sigma^2_P}$\\
-
 \end{enumerate}
 
 
