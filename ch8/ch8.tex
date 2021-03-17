@@ -1,0 +1,201 @@
+\documentclass[12pt]{amsart}
+
+\addtolength{\hoffset}{-2.25cm}
+\addtolength{\textwidth}{4.5cm}
+\addtolength{\voffset}{-2.5cm}
+\addtolength{\textheight}{5cm}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{15pt}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[colorlinks = true, linkcolor = black, citecolor = black, final]{hyperref}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{ marvosym }
+\usepackage{wasysym}
+\newcommand{\ds}{\displaystyle}
+
+
+\pagestyle{myheadings}
+
+\setlength{\parindent}{0in}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape VETM 690} \hfill {\scshape \Large  Ch. 8: Inbreeding consequences} \hfill {\scshape Mar 16 2021}
+\medskip
+\hrule
+\bigskip
+
+{\large \bf Effects of inbreeding on mean and variance of quantitative traits:}
+Terminology
+\begin{itemize}
+\item Consanguineous:
+\item Overdominance: 
+\item: Lethal recessive equivalents: genetic load of recessive genes in heterozygous state that if homozygous would cause death
+\item allogamous
+\end{itemize}
+
+\begin{itemize}
+\item Inbreeding depression: deterioration of fitness of consanguineous individuals relative to non-consanguineous ones
+\item Heterosis: generation of vigorous offspring in crosses between unrelated inbred individuals
+\item Decomposition of genotypic value and variance in non-panmictic populations:
+\begin{itemize}
+\item inbreeding depression = $\delta = M_0 - M = F\sqrt{V_D}$ where M is the contribution of the locus to the population mean and $M_0$ is that in a panmictic population
+\item Inbreeding depression (ID) requires allelic segregation in the locus, inbreeding, that the depression is maximum with interemdiate allele frequencies, and recessivity or that the dominance effect is not 0.
+\item ID is not necesarily a reduction, but it implies a reduction in the mean of reproductive traits, because most mutations that segregate in populations are recessive
+\item Mechanism of action: inbreeding reveals the deleterious nature of alleles whose actions would normally be masked in heterozygotes due to rare frequency (two unrelated individuals are unlikely to be carriers of the same mutation if it is rare)
+\item In inbred populations, two relatives each have a greater chance of carrying a copy of a deleterious mutations, appearing in homozygote descendants, manifesting the detrimental effect (dominance hypothesis)
+\item Overdominance hypothesis: when $h < (1+s)/2$ there will be apparent overdominance for a marker M even if none of the loci show overdominant gene action
+\item Considering all loci that affect a trait: take the sum of the expression for ID, that being $\delta = 2F\Sigma d_ip_iq_i$
+\item Directional dominance: for loc that control a trait, the recessive alleles are the ones that reduce the value in trait mean
+\item Non-directional dominance: some recessive alleles reduce the trait value while others increase the trait value, resulting in a net absence of depression
+\item Fitness character traits follow directional dominance, morphological traits follow non-directional dominance
+\item Method of partitioning genotypic value into additive and dominance values: obtain the average effect of allelic substitution (the difference between average effects of each allele with the population mean. 
+\item Additive values of different genotypes are the sum of average effects of alleles carried by that individual, obtained by either 1) calculate the mean of teh trait or obtain the regression coefficient of genotypic values on allelic dose (if panmictic, these values converge)
+\item additive variance is then expressed as $V_A = 2\alpha^2pq(1+F)$
+\end{itemize}
+\item Estimating ID and Inbreeding load:
+\begin{itemize}
+\item we previouisly defined mutation load as the reduction in fitness due to the segregation of deleteroius mutations in the population
+'item Inbreeding load: take this definition in an inbred population and obtain $L = (2pqsh + q^s) + F(qs-q^2s-2pqsh) = A+FB$, where A is the load in the panmictic population and the FB is the load masked in heterozygotes expressed with inbreeding, so FB is the inbreeding load
+\item For a single $W_F$ estimate, $BF = -ln(W_F/W_0)$. If we have mean fitnesses for different levels of inbreeding, then we can estimate inbreeding load (IL) from the regression of the mean of the log fitness on inbreeding
+\item The above regression is usually linear on log scales, and agrees with multilocus multiplicative fitness models
+\item Depression can be non-linear, whereby it accelerates for high levels of inbreeding
+\item We can correct for environmental factors if we estimate ID through generations in inbred and non-inbred lines contemporaenous with the inbred lines 
+\item Inbreeding load can be expressed as the number of lethal recessive equivalents that would produce the same inbreeding depression as one recessive allele
+\item high inbreeding load (6 lethal equivalents) can have a large impact on population viability, resuting in inbreeding depression of 26% 
+\item B values in humans are higher than that using lethal equivalents, and these estiamtes are higher for wild species than domestic ones (agreeing with the idea that ID is greater in natural environments) 
+\item A lot of debate on the interaction between inbreeding depression and environment (Wright suggested that ID is greater in bad environments, but not confirmed by many studies)
+\item We can predict the magnitude of IL for a population at the del. mutation-selection balance, expressed as $B = U(\bar{1/h}-2)$, so inbreeding load is a function of genomic mutation rate and the harmonic mean of h
+\item estimates of A are typically lower than those of B. Using A and B, we can estimate the domiannce coefficient of mutations under the del. mutation-selection balance as $A/[2(A+B)]$, which is an estimate of the harmonic mean of h for new mutations 
+\end{itemize}
+\item Inbreeding in panmictic populations of reduced census size
+\begin{itemize}
+\item In an infinite population with non-panmictic mating, changes in mean and genetic variance are 'reversible' (obey changes in the genotype frequencies but not allele frequencies). But in populations of reduced size, changes in mean and variance are irreversible because we see changes in allele frequencies which can result in the loss and fixation of alleles 
+\item redistributing within and between-line genetic variance: in an additive and neutral locus, additive variane is reduced linearly with inbreeding in the same fraction as the expected heterozygosity (see below)
+\item Assume a biallelic locus with alelles A and B in a population subdivided into lines of size $N$ maintained in panmixia and no selection. After many generations we reach uniformity ($V_{GW} = 0$), and this is seen from the expression for the variance in genetic variance in breeding lines $V_{GW,t} = V_{G0}(1-F_t)$
+\item Variance of line means for the trait increases linearly with inbreeding, shown by $V_{GB,t} = 2F_tV_{G0}$.
+\item However, the evolution if variances within and between-lines only applies to additive models, and behave differently under models with dominance. Special case: if frequency of allele q is low, then within-line variance increases to the value of F then declines (because drift produces random changes in allele frequencies, but in a recessive allele the corresponding change in additive variance is not the same). If the frequency of an allele is low, a small increase in frequency increases additive variance more than reductions in variance for the same reduction in allele frequency . 
+\item Epistasis can increase additive variance through a possible conversion of epistatic into additive variance after popoulation bottlenecks. This could confer evolutionary importance to the founder effect, since excess additive variance can be used to adapt the population. 
+\item Caveat: models that predict an increase in additive variance refer to strictly neutral models, but for components of fitness the increase in vriance is reduced by purging of deleterious alleles 
+\item In short, increase in additive variance from inbreeding leads to an increase in purifying selection known as purging 
+\end{itemize}
+\item Genetic differentiation in quantitative traits
+\begin{itemize}
+\item genetic variation between different populations for some trait can be shown by dimensionless parameter $Q_{ST} = V_{GB}/V_{GB}+2V_{GW}$, much like $F_{ST}$ measures allele frequency differentiation between populations, $Q_{ST}$ measures average genetic divergence for a trait as a function of total variance 
+\item Comparing $Q_{ST}$ and $F_{ST}$ can be used to detect the action of selection on a trait. If Q>F this could indicate selection favours different average values of the character in each subpopulation (diversifying selection), or if Q<F then this suggests populations are subject to convergent selection. 
+\item $Q_{ST}$ can be biased upwards if sub-populations have not grown in the same environment 
+\item Dominance and Q, F: dominance implies Q<F if selection is not present so dominance should not hide the footprint of diverent selection. If selection is present, then Q increases (again being detectable). Dominance can hide convergent selection because we expected Q<F with our without selection
+\item Epistasis can also hide convergent selection but not convergent selection
+\item because $_F{ST}$ is distributed heterogenously, when comparing against $Q_{ST}$ we should use the F value for multiple markers rather than their average 
+\item Empirical results show that a considerable part of divergence between populations is attributable to selective pressures from different environments (Q>F)
+\item Outbreeding depression: crossing individuals from different populations and having hybrids show reduced fitness 
+\end{itemize}
+\item Mutational meltdown and purging of inbreeding load:
+\begin{itemize}
+\item If inbreeding reduces $N_e$, then effects are dependent on the new size, but if this size is large then natural selection partially purges inbreeding load 
+\item but if new size is small, then purging is less effective, and in addition to inbreeding we see the fixation of deleterious alleles. This leads to a cycle of declining $N_e$, more fitness decline (drift load), reducing $N_e$ and so on and this cycle is called mutational meltdown. 
+\item Purging, or removal of deleterious mutations by natural selection, can be effective in populations of moderate size 
+\item consequences of purging inbreeding load: reducing ID, decrease in purged inbreeding coefficient, and a slower decline in average fitness compared to no purging 
+\end{itemize}
+\item Evolution of inbreeding in natural populations
+\begin{itemize}
+\item sexual reproduction prevents selfing in species with separate sexes
+\item plant systems to avoid inbreeding are sophisticated: controlled by steritility loci whereby only grains that carry different alleles will be able to fertilize the recipient female gamete
+\item Spatial separation of sexual organs: herkogamy, sexual organ functionality at different times: dichogamy, heterostyly: hermaphroditic species can be classified into different types depending on lengths of sexual organisms 
+\item Some plants have evolved to reproduce solely by self-fertilization, hypothesis is that autogamous species arose from allogamous species 
+\end{itemize}
+\begin{itemize}
+\item heterosis: reverse process of inbreeding depression, recovery of trait mean in a subdivided lines with panmictic mating 
+\item heterosis in the F1 generation is $dy^2$, dependent on dominance ($d\neq0$) and squared difference in allele frequency between lines, and in the second generation it is divided by 2
+\item maternal effects: genotype of the mother has an effect on the phenotype of the offspring
+\end{itemize}
+\item General and specific combining abilities
+\begin{itemize}
+\item 
+\end{itemize}
+\end{itemize}
+
+{\large \bf Problems}   
+\begin{enumerate}
+\item The mean fitness of a panmictic population with a large census size is 0.8. A small size population is founded, and when an average inbreeding coefficient is 0.12 is reached, the fitness of the population is 0.5. (a) What are the estimates of the expressed load and the inbreeding load in the starting population? (b) What will be the expected mean fitness of the population of small size when the inbreeding coefficient reaches the value of 0.2?
+\begin{gather*}
+A = -ln(W_0) = -ln(0.8)=0.22\\
+BF = -ln(W_F/W_0) \\
+B = -ln(W_F/W_0)/F = -ln(0.6/0.8)/0.12 = 3.92\\
+W_F = W_0e^{-BF} = 0.8*e^{-3.92(0.2)} = 0.365
+\end{gather*}
+
+\item The rate of a deleterious genomic mutation estimated in a species is $U = 0.2$ and the harmonic mean of the dominance coefficient of the mutations is 0.1. In a very large census size population, the estimated mean fitness is 0.62. (a) What is the expected value of the inbreeding depression rate in that population? (b) Is the estimated value of the harmonic mean of the dominance coefficient compatible with the estimate obtained the inbreeding depression rate?
+\begin{gather*}
+\bar{1/h} = 10 \\
+B = U(\bar{1/h}-2) = 0.2*(10-2)=1.6\\
+A = -ln(W_0) = -ln(0.62) = 0.478\\
+\frac{A}{2(A+B)} = \frac{0.478}{2(0.478 + 1.6)} = 0.115
+\end{gather*}
+
+\item A set of lines has been created that are maintained each generation with 6 males and 24 females. What is the expected value of the within- and between-line genetic variances for a neutral addiive trait with initial genetic variance 3.5 after 10 generations?\\
+\begin{gather*}
+N_e = 4N_mN_f/(N_m+N_f) = (4*6*24)/(6+24) = 19.2\\
+F_t =1-[1-1/(2N_e)]^t = 1-[1-1/38.4)]^10 = 0.232\\
+V_{GW} = V_{G0}(1-F_t) = 3.5(1-0.232) = 2.688\\
+V_{GB} = 2F_tV_{G0} = 2(0.232)3.5 = 1.623
+\end{gather*}
+\\
+\item The shell of 10 embryos of each of 50 Littorina females from 3 locaolties has been analyzed. Assumed that embyros come from a single fertilization. The results of an analysis of variance show the following values: 0.45 between localities, 0.11 between families within a locality, and 0.43 between sibs within a family. Corresponding analysis of a set of neutral markers estimated $F_{ST} = 0.023$ between localities. (a) Calculate the heritability of the character and $Q_{ST}$. (b) What does the comparison of this index with the available $F_{ST}$ suggest?\\
+\begin{gather*}
+h^2 = 2\sigma_f^2/(\sigma_f^2 + \sigma_w^2) = (2)0.11/(0.11+0.43) = 0.407\\
+Q_{ST} = \sigma_{GB}^2/(\sigma_{GB}^2 + 2\sigma_{GW}^2 = 0.45/[0.45 + 2(0.22)] = 0.506
+\end{gather*}
+
+\item A line with census size of 20 individuals is founded from a population of large census size for which the mean fitness is 0.86 and an inbreeding load of 2.4 has been estimated. Assuming that the deleterious mutations that segregate in the starting population have an average purged inbreeding coefficient of 0.2. (a) What would be the expected value of fitness and the remaining inbreeding load in the line after 20 generations? (b) If there had not been purging, what would those values have been?\\
+\begin{gather*}
+F_t = 1-(1-(1/2N)^t = 1-(1-1/40)^20 = 0.397\\
+g_{20} = 0.147\\
+W_0 = 0.86\\
+B_0 = 2.4\\
+B_t = B_0g_t(1-F_t)/F_t = 2.4(0.147)(1-0.397)/0.397 = 0.536\\
+W_20 = W_0exp(-B_0g_{20}) = (0.86)exp(-2.4*0.147) = 0.604\\
+B_{20} = B_0(1-F_{20}) = 2.4(1-0.397) = 1.447 \\
+W_{20} = W_oexp(-B_0F_{20}) = 0.86 exp(-2.4(0.397)) = 0.332
+\end{gather*}
+\end{enumerate}
+
+{\large \bf Self Assessment}
+\begin{enumerate}
+\item Inbreeding depression always implies a reduction in the mean of the trait with the increase in inbreeding.\\
+False, it does not necessarily imply a reduction because the change occurs in the direction of the value for the recessive allele and this can increase (pg 177).\\
+\item There may be absence of inbreeding depression for a trait even though the loci that affect it are not additive.\\
+This is true, and this is called non-directional dominance (no inbreeding depression despite dominance for loci affecting the trait). This is common for morphological traits.\\
+\item The additive variance is always increased with inbreeding.\\
+False, average effects can be different in panmictic and inbred populations (pg 179). Specifically, if h is not 0.5 and there is dominance, then $V_A$ can increase or decrease.\\
+\item The inbreeding load in humans is approximately B = 1 lethal equivalents, therefore, in the offspring of full sibs an increase in mortality of 22 percent is expected.\\
+$\delta = 1 - e^{-BF} = 1 - e^{-0.25} \approx 0.22$ so this is true. \\
+\item If in an infinite population with high inbreeding due to autogamy there is a generation of panmixia, the inbreeding reached by the population disappears.\\
+True, the changes in mean and genetic variance are reversible, so these values could revert back to those prior to inbreeding.\\
+\item Dominance and epistasis imply that $Q_{ST} > F_{ST}$ so they can hide the footprint of diversifying selection.\\
+This is false. Dominance and epistasis imply $Q_{ST} < F_{ST}$, so that dominance does not hide the footprint of divergent selection. On the contrary, dominance and epistasis can hide the footprint of convergent selection.\\
+\item The evolution of allogamy to autogamy in a population requires that the number of lethal equivalents be less than or equal to 2.\\
+This is true, and the math presented for this is on page 195.\\
+\item Heterosis is the expected frequency of heterozygotes.\\
+False, this is the recovery of the mean in a quantitative trait when inbreeding is gone.\\
+\item Genetic improvement through crosses is more effective if the gene action of the character to be improved is not additive.\\
+True, crossing and heterosis make use of genotypic variance to for the genetic improvement of plants, because it is feasible to obtain lines that are highly consanguineous due to inbreeding depression. Multiple inbred lines can be obtained in allogamous species, and then selection can be performed for different traits of interest which are then crossed to obtain heteroitc offspring. Selection in animals makes use of additive gene action.\\
+\item The method of equalizing parental contributions in conservation programmes may produce a lower long-term fitness than in the case where parental contributions are random, by reducing the intensity of natural selection. \\
+This is true, the relaxation of natural selection induced by this method reduces genetic purging and increases the fixation of deleterious alleles, reducing the mean fitness of the population in the long-term.\\
+\end{enumerate}
+
+
+\medskip
+
+
+
+\end{document}
