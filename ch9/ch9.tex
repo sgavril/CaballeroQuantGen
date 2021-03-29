@@ -29,7 +29,7 @@
 
 \thispagestyle{empty}
 
-{\scshape VETM 690} \hfill {\scshape \Large  Ch. 9: Artifical Selection} \hfill {\scshape Feb 28 2021}
+{\scshape VETM 690} \hfill {\scshape \Large  Ch. 9: Artifical Selection} \hfill {\scshape March 21 2021}
 \medskip
 \hrule
 \bigskip
@@ -175,7 +175,6 @@
 \end{itemize}
 
 {\large \bf Papers}
-Ideally empirical
 \begin{itemize}
 \item Vilas et al 2015: Allelic diversity for neutral markers retains a high adpative potential for quantiative traits than expected heterozygosity
 \item Dudley and Lambert 2004: 100 generations of selection for oil and protein in corn
@@ -191,21 +190,74 @@ Ideally empirical
 
 {\large \bf Problems}   
 \begin{enumerate}
-\item The aim is to carry out an experiment to estimate the heritability of a trait using pairs of parents and offspring. It is expected that the estimate of heritability will be around 0.6. It is intended to evaluate only one offspring per couple and a single parent or both. How many pairs of data would have to be evaluated in each case to obtain an estimate of heritability with a standard error equal to or less than 0.05?
+\item The number of eggs laid in one hour by 85 females of Drosophila melanogaster has been evaluated, a trait with an approximate heritability of $h^2 = 0.2$. If the offspring of 20 percent of females with the greatest egg laying were selected to form the next generation, what would be the expected mean of the population in that generation?\\
+See ch9.r for the answer to this question.\\
+
+\item In a selection experiment, 60 families of 10 sibs (5 of each sex) are evaluated in each generation for a trait with phenotypic variance 24 and heritability 0.3. Of the 300 individuals evaluated for each sex, the 60 with the highest phenotypic value are selected as parents for the next generation. What is the expected selection response in the first generation and the accumulated one in the initial 5 generations?\\
 \begin{gather*}
-SE(h^2) = \frac{2}{\sqrt{n}} \\
-n = (\frac{2}{SE(h^2)})^2 = (\frac{2}{0.05})^2 = 1600\\
-SE(h^2) = \sqrt{\frac{2}{n}}\\
-n = (\frac{\sqrt{2}}{SE(h^2)})^2 = (\frac{\sqrt{2}}{0.05})^2 = 800
+\phi = 60/300 = 0.2\\
+i = z/\phi = 0.2881/0.2 = 1.44\\
+R = ih^2\sigma_P = 1.4(0.3)(\sqrt{24)} = 2.06\\
+t(R) = 5(R) = 10.3
+\end{gather*}
+
+\item In the selection experiment described in the previous problem, what would be the effective size of the selected population and the standard error of the accumulated response?
+\begin{gather*}
+x \approx 0.82\\
+k = i(i-x) = 1.4(1.4-0.82) \approx 0.781 \\
+C^2 = i^2(h^2/2) = 1.4^2(0.3/2) = 0.294\\ 
+G = 1-kh^2 = 1-0.781(0.3) = 0.766\\
+Q = 2/(2-0.766) =  1.62\\
+N_e \approx \frac{N}{1 + Q^2C^2} = \frac{300}{1 +1.62^2(0.294) } = 67.72\\
+E[V(R)] = V_P[(th^2/N_e) + (1/n)] = (24)[(5*0.3/67.72) + 0.10] = 2.93\\
+SD = \sqrt{E[V(R)]} = \sqrt{2.93}
+\end{gather*}
+
+\item Continuing with 9.2 and 9.3, what would be the cumulative response up to generation 100, considering or not the contribution of mutation, if the mutational variance for the trait is $V_M = 0.002$? \\
+\begin{gather*}
+F_{100} = 1 - (1 - 1/(2N_e))^{100} = 1 - [1-1/(2*67.72)]^{100} = 0.523 \\
+\sigma^2_{A,0} = V_Ph^2 = 24(0.3) = 7.2 \\
+R_T= (2N_ei\sigma_p)[\sigma^2_{A,0}F_t + \sigma^2_M(t-2N_eF_t)] = \\
+2(67.72)(1.4)/\sqrt{24}*[(7.2*0.523) + 0.002(100-2*67.62*0.523)] = 148.12\\
+R_t = 2(67.72)(1.4)/\sqrt{24}*[(7.2*0.523)] = 145.86
+\end{gather*}
+
+\item In the selection experiment in 9.2, individual selection was carried out. What would be the expected response to one generation of selection of within-family selection or family selection is carried out?\\
+\begin{gather*}
+r_{CA} = h = \sqrt{0.3}\\
+t = h^2/2 = 0.15\\
+r = 0.5\\
+n = 5\\
+r_{P_WA} = \frac{h(1-r)}{\sqrt{1-t}} = \sqrt{0.3}*\frac{1-0.5}{\sqrt{1-.015}} = 0.297\\
+r_{P_FA} = \frac{h[1+(n-1)r]}{\sqrt{n[1+(n-1)t]}} = \frac{\sqrt{0.3}*[1+(5-1)*0.5]}{\sqrt{5[1+(5-1)0.15]}} = 0.581\\
+R = ir_{CA}\sigma_A = 1.4(0.297)\sqrt{7.2} = 1.11\\
+R = ir{P_FA}\sigma_A = 1.4(0.581)\sqrt{7.2} = 2.18
 \end{gather*}
 
 \end{enumerate}
 
 {\large \bf Self Assessment}
 \begin{enumerate}
-\item The estimate of heritability obtained from the regression of offspring values on that of their parents will necessarily be biased if the latter are not a random sample of the population.\\
-False, if the group of parents were selected, the regerssion estimates would not be affected if the bias would occur to the same extent in the numerator and the denominator of the equation $b_{OP} = \frac{cov(O,P)}{\sigma^2_P}$\\
-
+\item For a given heritability and phenotypic variance, the response to artificial selection will be greater the greater the dominance variance.\\
+False, the Response to selection is calculated by $R = ih^2\sigma_P$, which accounts for heritability and phenotypic variance but not dominance variance.\\
+\item To estimate realized heritability, it is necessary to carry out two or more generations of selection.\\
+False, realized heritability is an estimate of the heritability of a trait in the starting population, and this can be computed using values from 1 generation of parents and offspring.\\
+\item The scale effects on the phenotypic variance may be responsible for the asymmetric responses.\\
+True, phenotypic variance may change according to the direction of selection, which will also change the selection differential through changes in the estimate of realized heritability.\\
+\item Since artificially selected parents belong to one extreme of the population phenotypic distribution, a negative LD is generated that reduces genetic variance of the offspring.\\
+True, this is known as the Bulmer effect (transient reduction in additive genetic variance, which can be interpreted by negative LD for traits in selected individuals).\\
+\item The Bulmer effect only affects the between-family component of the variance.\\
+True. For Bulmer's effect, half of the genetic variance in offspring (assuming full-sub families) will be within families and this is not affected by phenotypic values in the absence of linkage. The other half of genetic variance is between families which is affected by the reduction in additive genetic variance.\\
+\item If, given a fixed number of individuals evaluated, the selection intensity is increased, the response to long-term selection will increase.\\
+False, not sure why or where.\\
+\item If artificial selection is applied to a population without genetic variability, the cumulative response will be due only to mutation and it will have an initially convex and then linear form.\\
+True, this is demonstrated on page 224 and figure 9.9.\\
+\item The deleterious pleotropic effects of selected loci may be one of the reasons for the existence of limits in the response to selection.\\
+True, this was mentioned on page 227 where 1/3 of spontaneous mutations in a selection experiment for bristle number in Drosophila were lethals with pleiotropic effects.\\
+\item Selection within families is recommended when heritability is low and the environmental variation common to members of the families is scarce.\\
+False, we can see from figure 9.13 that response for selection within families is maximized when heritability is high and common environmental variance is also high.\\
+\item Marker-assisted selection increases the short-term response but may reduce the long-term response.\\
+True, the long-term response can be reduced because this response is reduced with generations of selection since variation of marker-assisted loci decreases as their allele frequency increases until fixation. Or, long-term response can decrease if MAS reduces $N_e$ and thus long-term response on polygenic variation.
 \end{enumerate}
 
 

@@ -1,0 +1,102 @@
+\documentclass[12pt]{amsart}
+
+\addtolength{\hoffset}{-2.25cm}
+\addtolength{\textwidth}{4.5cm}
+\addtolength{\voffset}{-2.5cm}
+\addtolength{\textheight}{5cm}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{15pt}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[colorlinks = true, linkcolor = black, citecolor = black, final]{hyperref}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{ marvosym }
+\usepackage{wasysym}
+\newcommand{\ds}{\displaystyle}
+
+
+\pagestyle{myheadings}
+
+\setlength{\parindent}{0in}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+{\scshape VETM 690} \hfill {\scshape \Large  Ch. 10: Natural Selection} \hfill {\scshape March 28 2021}
+\medskip
+\hrule
+\bigskip
+
+{\large \bf Quantitative traits and fitness:}
+\begin{itemize}
+\item Natural selection is the main force for changes in allele frequencies
+\item Only selection produces changes that promote adaptation
+\item Natural selection acts directly on a single character or fitness and the changes that occur between different quantitative traits depend on the genetic correlation between those traits and fitness
+\item Quantitative traits can be represented as a pyramid where the top is fitness and main components are immediately below (viability, fecundity, mating success) and then a large number of interrelated traits through multiple and overlapping connections 
+\item Traits at the bottom of the pyramid are neutral and loosely related to fitness, and consequently high heritabilities and low or no non-additive genetic variance and inbreeding depression
+\item Traits at the tip of the pyramid show high inbreeding depression, low heritabilities due to environmental contributions and non-additive genetic components
+\item Modelling response to natural selection: similar to previous chapter
+\begin{itemize}
+\item Take a population with census size $N$, and the contribution of individual $i$ is $W_i$
+\item $\bar{W}$ is the population mean, and the selection differential is the average superiority of selected parents weighted by their relative contribution to the next generation
+\item Or, symbolically, $\sigma_{i=1}^N(W_i-\bar{W})W_iN = (\sigma_{i=1}^NW_i^2/N) - \bar{W^2} = \sigma^2_{P,W}$ 
+\item The selection differential is the phenotypic variance for fitness, and since we have $R = h^2S$, then $R_W = \sigma^2_{A,W}$ or the response to natural selection is equal to the additive variance for fitness (fundamental theorem of natural selection)
+\item So natural selection will produce response until maximal fitness where additive variance becomes 0. But mutation implies that additive variance is constantly generated for fitness  (so selection continuously acts in a circle to reduce that same variation)
+\item Scaled by resource availability, selection acts to maintain the status quo.
+\item But new equilibria can appear depending on mutations, the external environment and other species 
+\item Soft selection: a type of selection where census size remains constant and fitness is dependent on the density and frequency of individuals 
+\item Hard selection: when operation of selection implies an increase or reduction in census size due to birth and mortality of individuals or limitation of resources
+\item Non-additive variance (dominance, epistatic) may not be neglible for fitness components 
+\item Even without the above, there could be additive variance for main components even if population fitness is maximum
+\item It is common to observe antagonistic pleotriopy generating negative correlations between fitness components (one locus affects more than 1 trait in opposite directions). Ex: increase in fecundity may decrease viability
+\item correlated selection differential for a trait X as a result of selection on fitness $S_{CX} = cov_P(X,W)$, and in turn the correlated response will be $R_{CX} = cov_A(X,W)$ (second theorem of natural selection)
+\item Selection gradient: the ratio between the correlated selection differential and phenotypic variance in the regression $b_{P(W.X)} = S_{CX} / \sigma^2_{PX}$
+\item Generalization of the effect of multiple quantitaive traits on the response to natural selection: $R_{CX_i} = b_{P(W.X_i)}\sigma^2_{A,X_i} + \sigma_{j \neq 1}^nb_{P(W.X_j)}cov_A(X_i,X_j)$ or more succintly, $R = Gb$ 
+\item Selection gradiants can be obtained by estimating the partial regressions of relative fitness on the measures of the trait
+\item Example using Darwin's finches: selected for shorter and wider beaks based on survival as a measure of fitness before and after a strong drought
+\end{itemize}
+\item Directional, stabilizing and diversifying selection
+\begin{itemize}
+\item  Negative selection: natural selection eliminates deleterious mutations for main components of fitness
+\item At the same time, this increases the frequency of beneficial mutations until fixation, generating evolutionary novelties (positive selection)
+\item For traits that are less strongly related to fitness: find stabilizing selection (individuals with intermediate phenotypes are favoured)
+\item Diversifying selection: mutation favours more extreme individuals 
+\item Convergent selection: when two or more populations are subject to stabilizing selection for the same optimum, and the genetic differentiation between them for that trait is smaller than expected (using a neutral model) 
+\end{itemize}
+\item Intensity of real and apparent stabilizing selection
+\begin{itemize}
+\item Fitness function: probability of survival conditioned to the phenotype. Not a density function! Amplitude to the point of inflection is the measure of the standard deviation of the normal distribution and is quantified as $\sqrt{V_S}$ where $V_S$ is an inverse measure of the intensity of stabilizing selection 
+\item Mean population fitness can be obtained by integrating fitness weighted by trait density: $\bar{W} = \sqrt{\frac{V_PV_S}{V_P + V_S}}$
+\item Variance of the distribution after selection: $V_P^* = V_P - \frac{V_P^2}{V_P + V_S}$
+\item Stabilizing selection may be not be apparent if the trait is not subject to stabilizing selection but its assocliated loci have pleiotropic effects on fitness (requires a high  correlation between the trait and fitness)
+\item 
+\end{itemize}
+\end{itemize}
+
+{\large \bf Problems}   
+\begin{enumerate}
+\item The aim is to carry out an experiment to estimate the heritability of a trait using pairs of parents and offspring. It is expected that the estimate of heritability will be around 0.6. It is intended to evaluate only one offspring per couple and a single parent or both. How many pairs of data would have to be evaluated in each case to obtain an estimate of heritability with a standard error equal to or less than 0.05?
+\begin{gather*}
+SE(h^2) = \frac{2}{\sqrt{n}} \\
+n = (\frac{2}{SE(h^2)})^2 = (\frac{2}{0.05})^2 = 1600\\
+SE(h^2) = \sqrt{\frac{2}{n}}\\
+n = (\frac{\sqrt{2}}{SE(h^2)})^2 = (\frac{\sqrt{2}}{0.05})^2 = 800
+\end{gather*}
+
+\end{enumerate}
+
+{\large \bf Self Assessment}
+\begin{enumerate}
+\item The estimate of heritability obtained from the regression of offspring values on that of their parents will necessarily be biased if the latter are not a random sample of the population.\\
+False, if the group of parents were selected, the regression estimates would not be affected if the bias would occur to the same extent in the numerator and the denominator of the equation $b_{OP} = \frac{cov(O,P)}{\sigma^2_P}$\\
+\end{enumerate}
+\medskip
+
+\end{document}
