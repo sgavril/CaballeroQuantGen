@@ -76,27 +76,76 @@
 \item Mean population fitness can be obtained by integrating fitness weighted by trait density: $\bar{W} = \sqrt{\frac{V_PV_S}{V_P + V_S}}$
 \item Variance of the distribution after selection: $V_P^* = V_P - \frac{V_P^2}{V_P + V_S}$
 \item Stabilizing selection may be not be apparent if the trait is not subject to stabilizing selection but its assocliated loci have pleiotropic effects on fitness (requires a high  correlation between the trait and fitness)
-\item 
+\item Assuming a pleiotropic effect on fitness in heterozygosis of $sh$, and recalling that the genetic variance of a trait at mutation-selection balance $V_G = V_M/sh$, then it follows that $sh = V_M/V_G$. Substituting in common values, the apparent stabilizing selection by pleiotropy appears to be very weak.
+\end{itemize}
+\item Selection in heterogenous environments
+\begin{itemize}
+\item If populations reside in areas with environmental heterogeneity, the adaptation of individuals to different habitats can result in quantitative trait differentaition
+\item If reproductive isolation is achieved, this can lead to speciation
+\item In text example: high coast which has insolation, less waves and crabs led to molluscs with ribbed banded ecotypes while low coast which has humidity, strong waves and no crabs led to smooth unbanded ecotypes.  
+\item Possible to estimate heritability in mollusc example because embryos of the same female are kept in the pouch before laying and shells are already formed. Comparing $Q_{ST}$ with $F_{ST}$ for neutral markers can test for diversifying selection
+\item Different mollusc ecotypes had similar heritabilities, but the genetic differentiation between ecotypes was much greater than that observed between populations of the same ecotype in different transects 
+\item Review: $Q_{ST}$ is a dimensionless parameter that is analagous to $F_{ST}$. The former provides an average of the genetic divergence for a trait as a function of total variation. The latter constitutes a measure of allele frequency differentiation between populations.
+\item In the molluscs, genetic differentiation between ecotypes was much greater than genetic differentiation within the same ecotype in different transects. Similarly, $F_{ST}$ for these molluscs (the allele frequency differentiation for neutral markers) was similar to $Q_{ST}$ between transects (or within an ecotype) but lower than the value of $Q_{ST}$ between ecoptypes (these suggest that diversifying selection has promoted divergence between ecotypes).
+\end{itemize}
+\item Genetic variance and natural selection
+\begin{itemize}
+\item Natural selection will decrease genetic variance (except for diversifying selection)
+\item Reductions in genetic variance by natural selection and drift are counterbalanced by mutation
+\item Excess additive genetic variation has been observed in nature, and explanations for this include genotype-environment interaction and antagonistic pleiotropic effects of mutations on fitness components that are different from viability
+\item Neutral characters have been shown to be a direct function of $N_e$, and should theoretically increase with census size. But this has led to Lewontin's paradox: repeated observation of neutral genetic diversity that ranges by an order of magnitude when population sizes differ by more than 3 orders of magnitude
+\item Explanations for Lewontin's paradox: effective size does not increase proportionally to census size (species with large census sizes have effective sizes that are proportionally smaller than those with small census sizes). Two possible reasons for this, 1): species with large census size experience large demographic disturbances (high variation in reproductive success and oscillations in census size) which reduces $N_e$ and 2) effective size can be reduced due to constriction of genetic variation as a consequence of natural selection (either by purifying selection or selection of beneficial variants that greatly reduce neutral recombination)
+\item In short, though we would expect neutral genetic variation to increase with $N_e$, we can see that constriction of this value by demographic and selective causes implies that differences in genetic variances between species with of large or small census size are not that large
+\item Further note: neutral character traits can have deleterious pleiotropic effects on fitness. Genetic variance does not grow indefinitely in proportion to effective size (rather an asymptotic limit is reached) 
+\item Traits subjected to stabilizing selection: two models for the genetic variance at equilibrium in infinite populations
+\item Kimura-LAnde model: assume loci with high mutation rates per locus and infinite number of alleles per locus of small effect versus existing variation. At equilibrium, genetic variation is approximated by $\hat{V_G} = \sqrt{2nV_MV_S}$
+\item House of cards model: low mutation rates and allelic effects of such large effect relative to stabilizing selection that mutations remain at low frequency, and stabilizing selection only results in selection against rare alleles 
+\item Named the house of cards model because each mutation disturbs the existing equilibrium 
+\end{itemize}
+\item Genomic footprint of natural selection
+\begin{itemize}
+\item Previously saw that the impact of selection on $N_e$ is more intense with recombination is low
+\item Genomically, selection can be studied by evaluating diversity at different points along the genome
+\item Background/purifying selection reduces neutral variation in a homogenous manner 
+\item Selection for beneficial alleles is more conspicuous: the rapid increase in the frequency of alleles produces a selective sweep (nearby neutral or deleterious alleles, hitchhikers) are also fixed with the beneficial allele. The lower the recombination rate, the greater the dragged portion.
 \end{itemize}
 \end{itemize}
 
 {\large \bf Problems}   
 \begin{enumerate}
-\item The aim is to carry out an experiment to estimate the heritability of a trait using pairs of parents and offspring. It is expected that the estimate of heritability will be around 0.6. It is intended to evaluate only one offspring per couple and a single parent or both. How many pairs of data would have to be evaluated in each case to obtain an estimate of heritability with a standard error equal to or less than 0.05?
+\item In a field experiment, the partial regression of the individuals' fitness (W, scaled to the population mean) on the phenotypic values of two traits (X and  Y) was estimated, obtaining the selection gradients $b_{P(W.X)} = 0.8, b_{P(W.Y)}=0.1$. There are also estimates of the additive genetic variance of the two traits and their genetic correlation: $\sigma^2_{A,X} = 20, \sigma^2_{A,Y} = 30, r_A = 0.41$. (a) What are the expected correlated responses in the traits by the action of natural selection? (b) What would those responses be if the genetic correlation between the two traits were of the same magnitude but negative?
 \begin{gather*}
-SE(h^2) = \frac{2}{\sqrt{n}} \\
-n = (\frac{2}{SE(h^2)})^2 = (\frac{2}{0.05})^2 = 1600\\
-SE(h^2) = \sqrt{\frac{2}{n}}\\
-n = (\frac{\sqrt{2}}{SE(h^2)})^2 = (\frac{\sqrt{2}}{0.05})^2 = 800
+R_{CX} = b_{P(W.X)}\sigma^2_{A,X} + b_{P(W.Y)}cov_A(X,Y)\\
+R_{CX} = 0.8(20) + (0.1*10) = 17\\ 
+R_{CY} = 0.1(30) + 0.8(10) = 11\\
+R_{CX} = 0.8(20) + 0.1(-10) = 15\\
+R_{CY} = 0.1(30) + 0.8(-10) = -5\\
+\end{gather*}
+
+\item The phenotypic variance for a character is $V_P = 30$ and that character is subject to stabilizing selection with intensity $V_S = 20$. By how much will the phenotypic variance will be reduced by the effect of selection? What decline in fitness is expected for each unit of increase in the square of the phenotypic values?
+\begin{gather*}
+V_{P*} = \frac{V_PV_S}{V_P + V_S} = (30*20)/(30+20) = 12\\
+\Delta V_P = \frac{V_{P*}-V_P}{V_P} = \frac{12 - 30}{30} = -18/30 = -3/5 = -0.6\\
+b_{w.y^2} = -1/(2V_S) = -1/40 = -0.025
 \end{gather*}
 
 \end{enumerate}
 
 {\large \bf Self Assessment}
 \begin{enumerate}
-\item The estimate of heritability obtained from the regression of offspring values on that of their parents will necessarily be biased if the latter are not a random sample of the population.\\
-False, if the group of parents were selected, the regression estimates would not be affected if the bias would occur to the same extent in the numerator and the denominator of the equation $b_{OP} = \frac{cov(O,P)}{\sigma^2_P}$\\
-\end{enumerate}
+\item According to the Fundamental Theorem of Natural Selection, the genetic variance for the components of fitness is zero.\\
+True/false\\
+\item Only neutral traits show a null genetic covariance with fitness.\\
+\item Stabilizing selection, by favouring individuals with intermediate phenotype, necessarily implies overdominance gene action for fitness.\\
+False
+\item Convergent selection implies stabilizing selection for the same optimum in two or more populations.
+\item The greater the intensity of stabilizing selection, the greater the value of $V_S$, a measure of the width of the Gaussian curve that determines fitness.\\
+False, $V_S$ is an inverse measure of the strength of stabilizing selection so lower $V_S$ means greater intensity.\\
+\item The intensity of apparent stabilizing selection on a trait, due to pleiotropic effects on fitness, depends on the deleterious effect of mutations in heterozygosis.\\
+\item A value of quantitative genetic differentiation $Q_{ST}$, greater than the corresponding value of differentiation in allele frequencies for neutral markers $F_{ST}$ allows diversifying selection to be inferred.\\
+\item For a purely neutral character, it is predicted that the genetic variance increases linearly with the effective population size.\\
+\item All types of natural selection reduce genetic variance.\\
+\item Selective sweeps of beneficial alleles reduce the neutral genetic diversity near the selective locus, but background selection can increase it.\\
 \medskip
-
+\end{enumerate}
 \end{document}
